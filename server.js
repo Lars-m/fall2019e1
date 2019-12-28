@@ -60,9 +60,9 @@ app.get('/', (req, res) => res.send(`
   </thead>
    <tbody>
     <tr><td>movieInfo/:title</td><td>Get details for a movie - given the title</td><td><a href="movieInfo/The Nutty Professor">The Nutty Professor</a></td></tr>
-    <tr><td>moviePoster/:title</td><td>Get movie Poster - given the title - given the title</td><td><a href=href="moviePoster/The Nutty Professor">The Nutty Professor</a></td></tr>
-    <tr><td>imdbScore/:title</td><td>Get imdb scores - given the title - given the title</td><td><a href=href="imdbScore/The Nutty Professor">The Nutty Professor</a></td></tr>
-    <tr><td>tomatoesScore/:title</td><td>Get tomatoes scores - given the title - given the title</td><td><a href=href="tomatoesScore/The Nutty Professor">The Nutty Professor</a></td></tr>
+    <tr><td>moviePoster/:title</td><td>Get movie Poster - given the title - given the title</td><td><a href="moviePoster/The Nutty Professor">The Nutty Professor</a></td></tr>
+    <tr><td>imdbScore/:title</td><td>Get imdb scores - given the title - given the title</td><td><a href="imdbScore/The Nutty Professor">The Nutty Professor</a></td></tr>
+    <tr><td>tomatoesScore/:title</td><td>Get tomatoes scores - given the title - given the title</td><td><a href="tomatoesScore/The Nutty Professor">The Nutty Professor</a></td></tr>
     <tr><td>metacriticScore/:title</td><td>Get metacritic scores - given the title</td><td><a href="metacriticScore/The Nutty Professor">The Nutty Professor</a></td></tr>
     <tbody>
   <table>
