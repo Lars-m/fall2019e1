@@ -41,22 +41,31 @@ app.get('/', (req, res) => res.send(`
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Movie API</title>
 </head>
-<body style="font-family: Arial, Helvetica, sans-serif">
+<body class="container">
+  <br/>
   <h2>Simple test server for the fall 2019 exam</h2>
-
-  <a href="/allTitles">List of all titles you can search for </a>
+  <br/>
+  <p><a href="/allTitles?pretty=1">List of all titles you can search for </a></p>
   
   <h3>This simulates the external server-API's you must use for the exercise</h3>
   <p><i>While testing via a browser (and only here), you can add this to the end of the URL to get pretier output: <code>?pretty=1</code></i></p>
-  <ul>
-    <li><a href="movieInfo/The Nutty Professor">Get details for a movie - given the title</a></li>
-    <li><a href="moviePoster/The Nutty Professor">Get movie Poster - given the title</a></li>
-    <li><a href="imdbScore/The Nutty Professor">Get imdb scores - given the title</a></li>
-    <li><a href="tomatoesScore/The Nutty Professor">Get tomatoes scores - given the title</a></li>
-    <li><a href="metacriticScore/The Nutty Professor">Get metacritic scores - given the title</a></li>
-  <ul>
+ 
+  
+  <table class="table">
+  <thead>
+  <tr><th>API - URL</th><th>Description</th><th>Test</th></tr>
+  </thead>
+   <tbody>
+    <tr><td>movieInfo/:title</td><td>Get details for a movie - given the title</td><td><a href="movieInfo/The Nutty Professor">The Nutty Professor</a></td></tr>
+    <tr><td>moviePoster/:title</td><td>Get movie Poster - given the title - given the title</td><td><a href=href="moviePoster/The Nutty Professor">The Nutty Professor</a></td></tr>
+    <tr><td>imdbScore/:title</td><td>Get imdb scores - given the title - given the title</td><td><a href=href="imdbScore/The Nutty Professor">The Nutty Professor</a></td></tr>
+    <tr><td>tomatoesScore/:title</td><td>Get tomatoes scores - given the title - given the title</td><td><a href=href="tomatoesScore/The Nutty Professor">The Nutty Professor</a></td></tr>
+    <tr><td>metacriticScore/:title</td><td>Get metacritic scores - given the title</td><td><a href="metacriticScore/The Nutty Professor">The Nutty Professor</a></td></tr>
+    <tbody>
+  <table>
   
 </body>
 </html>
