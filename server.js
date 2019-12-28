@@ -11,7 +11,7 @@ app.use(function (err, req, res, next) {
     return next(err)
   }
   if (err.code) {
-    return res.status(err.code).json({ code: 404, msg: err.message })
+    return res.status(curlerr.code).json({ code: 404, msg: err.message })
   }
   return res.status(500).json({ code: 500, msg: err.message })
 })
@@ -34,7 +34,33 @@ function sendData(res, data, pretty) {
   res.send(json);
 }
 
-app.get('/', (req, res) => res.send('Simple REST-movie Server meant for an exam-exercise'))
+app.get('/', (req, res) => res.send(`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif">
+  <h2>Simple test server for the fall 2019 exam</h2>
+
+  <a href="/allTitles">List of all titles you can search for </a>
+  
+  <h3>This simulates the external server-API's you must use for the exercise</h3>
+  <p><i>While testing via a browser (and only here), you can add this to the end of the URL to get pretier output: <code>?pretty=1</code></i></p>
+  <ul>
+    <li><a href="movieInfo/The Nutty Professor">Get details for a movie - given the title</a></li>
+    <li><a href="moviePoster/The Nutty Professor">Get movie Poster - given the title</a></li>
+    <li><a href="imdbScore/The Nutty Professor">Get imdb scores - given the title</a></li>
+    <li><a href="tomatoesScore/The Nutty Professor">Get tomatoes scores - given the title</a></li>
+    <li><a href="metacriticScore/The Nutty Professor">Get metacritic scores - given the title</a></li>
+  <ul>
+  
+</body>
+</html>
+`))
 
 app.get("/allTitles", (req, res) => {
   const pretty = req.query.pretty;
