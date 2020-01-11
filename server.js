@@ -6,16 +6,6 @@ const port = 3000
 const titles = Object.keys(movies)
 
 
-app.use(function (err, req, res, next) {
-  if (res.headersSent) {
-    return next(err)
-  }
-  if (err.code) {
-    return res.status(curlerr.code).json({ code: 404, msg: err.message })
-  }
-  return res.status(500).json({ code: 500, msg: err.message })
-})
-
 function getMovie(req, res) {
   const title = req.params.title
   const movie = movies[title];
@@ -124,6 +114,15 @@ app.use(function (req, res, next) {
   res.json({ code: 404, msg: "No matching route found" })
 })
 
+app.use(function (err, req, res, next) {
+  if (res.headersSent) {
+    return next(err)
+  }
+  if (err.code) {
+    return res.status(err.code).json({ code: 404, msg: err.message })
+  }
+  return res.status(500).json({ code: 500, msg: err.message })
+})
 
 
 app.listen(port, () => console.log(`Exam Server (movies), listening on port ${port}!`))
